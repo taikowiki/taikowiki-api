@@ -374,7 +374,7 @@ GET `/song/no?songno=["2", "3"]`
 ### 3. **GET `/song/all`**
 #### Request data for all songs.
 - **Query Params**: 
-  - `after` (optional): The ID of the song after which to retrieve data (used for pagination).
+  - `after` (optional): Requests data for songs that have been updated since this time.
 
 #### Example Request:
 GET `/song/all?after=100`
@@ -422,11 +422,13 @@ GET `song/search?query=memoria&difficulty=oni&level=10`
 ---
 
 ### 5. **GET `/rating`**
-#### Request general rating information for songs.
+#### Request the rating information of a user.
 - **Query Params**: 
   - `ratingdata` (optional): 
     - `'top50'` to request rating data for the top 50 songs.
     - `'all'` to request rating data for all songs.
+- **Headers**
+    - `x-api-key`: api key from `taiko.wiki`.
 
 #### Example Request:
 GET `/rating`
@@ -445,7 +447,7 @@ GET `/rating`
 ---
 
 ### 6. **GET `/dani/version`**
-#### Request all available dan-i dojo versions.
+#### Request dan-i dojo versions.
 #### Example Request:
 GET `/dani/version`
 
