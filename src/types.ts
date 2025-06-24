@@ -1,3 +1,6 @@
+import type { getRating } from '@taiko-wiki/taiko-rating';
+import type { CardData } from 'hiroba-js/types';
+
 export const VERSION = [
     ["NAC"],
     ["AC1", "AC2", "AC3", "AC4", "AC5", "AC6", "AC7", "AC8", "AC9", "AC10", "AC11", "AC12", "AC12.5", "AC13", "AC14"],
@@ -63,7 +66,8 @@ export type SongData = {
 export type SongSearchOption = {
     query: string,
     difficulty: 'easy' | 'normal' | 'hard' | 'oni' | 'ura' | 'oniura',
-    level: number
+    level: number,
+    genre: Genre
 };
 
 export type SongSearchData = Pick<SongData, "songNo" | "genre" | "title" | "titleKo" | "aliasKo" | "titleEn" | "aliasEn" | "artists" | "romaji"> & {
@@ -74,4 +78,40 @@ export type SongSearchData = Pick<SongData, "songNo" | "genre" | "title" | "titl
         oni: number,
         ura: number | null
     }
+}
+
+export type DonderData = CardData;
+export type RatingData = ReturnType<typeof getRating>['songRatingDatas'];
+export type RatingResponse = {
+    donder: DonderData,
+    currentRating: number
+}
+
+export interface DaniData {
+    version: DaniVersion;
+    data: Dani[];
+}
+
+export type DiffchartData = {
+    name: string;
+    level: number;
+    type: "clear" | "fc" | "dfc";
+    data: {
+        name: string;
+        sections: {
+            name: string;
+            order: number;
+            songs: {
+                order: number;
+                songNo: string;
+                title: string;
+                difficulty: "easy" | "normal" | "hard" | "oni" | "ura";
+            }[];
+            color?: string | undefined;
+            backgroundColor?: string | undefined;
+        }[];
+        color?: string | undefined;
+        backgroundColor?: string | undefined;
+    };
+    comment: string | null;
 }
