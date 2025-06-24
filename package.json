@@ -1,5 +1,5 @@
 {
-  "name": "taikowiki-api",
+  "name": "@taiko-wiki/taikowiki-api",
   "version": "1.0.0",
   "description": "taiko.wiki api",
   "main": "./cjs/index.js",
