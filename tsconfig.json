@@ -1,0 +1,34 @@
+{
+  "include": [
+    "src/**/*.ts"
+  ],
+  "compilerOptions": {
+    // "incremental": true,
+    "target": "ESNext",
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "removeComments": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "outDir": "dist"
+  },
+  "ts-node": {
+    "esm": true,
+    "compilerOptions": {
+      "noImplicitAny": true,
+      "sourceMap": false,
+      "module": "NodeNext",
+      "target": "ESNext",
+      "allowJs": true,
+      "moduleResolution": "NodeNext",
+      "strict": true,
+      "forceConsistentCasingInFileNames": true,
+      "removeComments": true
+    },
+  }
+}

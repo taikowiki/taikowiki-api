@@ -1,0 +1,31 @@
+{
+  "name": "taikowiki-api",
+  "version": "1.0.0",
+  "description": "taiko.wiki api",
+  "main": "./cjs/index.js",
+  "module": "./esm/index.js",
+  "exports": {
+    ".": {
+      "import": "./esm/index.js",
+      "require": "./cjs/index.js"
+    },
+    "./types": "./src/types.js"
+  },
+  "scripts": {
+    "build": "npm run build:cjs & npm run build:esm",
+    "build:cjs": "tsc --p ./cjs/tsconfig.json",
+    "build:esm": "tsc --p ./esm/tsconfig.json"
+  },
+  "keywords": [],
+  "author": "hotsixman",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.2",
+    "cheerio": "^1.0.0-rc.12",
+    "fs": "^0.0.1-security"
+  },
+  "devDependencies": {
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.2.2"
+  }
+}
