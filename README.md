@@ -130,10 +130,10 @@ GET `/song/no/1`
 ### 2. **GET `/song/no`**
 #### Retrieve data for multiple songs by their songNo.
 - **Query Params**: 
-  - `songno` (required): An array of song numbers (e.g., `["1234", "5678"]`).
+  - `songno` (required): An array of song numbers (e.g., `["2", "3"]`).
 
 #### Example Request:
-GET `/song/no?songno=["1234", "5678"]`
+GET `/song/no?songno=["2", "3"]`
 
 #### Example Response:
 ```json
