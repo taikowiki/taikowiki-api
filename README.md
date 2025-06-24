@@ -1,5 +1,9 @@
-# Taikowiki API Documentation
+# Taikowiki API
 
+## JS Library
+`npm i @taiko-wiki/taikowiki-api`
+
+---
 ## Base URL
 https://taiko.wiki/api/v1
 
