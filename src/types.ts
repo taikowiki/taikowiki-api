@@ -1,5 +1,5 @@
 import type { getRating } from '@taiko-wiki/taiko-rating';
-import type { CardData } from 'hiroba-js/types';
+import type { CardData, Difficulty } from 'hiroba-js/types';
 
 export const VERSION = [
     ["NAC"],
@@ -26,10 +26,27 @@ export type Genre = typeof GENRE[number];
 export type DaniVersion = typeof DANIVERSION[number];
 export type Dan = typeof DAN[number];
 
+export type DaniSongData = {
+    songNo: string;
+    difficulty: Difficulty;
+}
+export type DaniConditionData = {
+    type: ("gauge") | ("combo") | ("score") | ("roll") | ("hit") | ("good") | ("ok") | ("bad") | ("score_sum"),
+    criteria: {
+        red: number[],
+        gold: number[]
+    }
+}
 export type Dani = {
     version: DaniVersion;
     dan: Dan;
-    order: 1 | 2 | 3;
+    name: string | null;
+    songs: [DaniSongData, DaniSongData, DaniSongData],
+    conditions: DaniConditionData[]
+}
+export interface DaniData {
+    version: DaniVersion;
+    data: Dani[];
 }
 export type Course = {
     level: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
@@ -85,11 +102,6 @@ export type RatingData = ReturnType<typeof getRating>['songRatingDatas'];
 export type RatingResponse = {
     donder: DonderData,
     currentRating: number
-}
-
-export interface DaniData {
-    version: DaniVersion;
-    data: Dani[];
 }
 
 export type DiffchartData = {

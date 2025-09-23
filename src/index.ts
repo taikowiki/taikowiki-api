@@ -1,5 +1,4 @@
-import { DaniData } from "hiroba-js/types";
-import { DaniVersion, DiffchartData, RatingData, RatingResponse, SongData, SongSearchData, SongSearchOption, Version } from "./types";
+import { DaniData, DaniVersion, DiffchartData, RatingData, RatingResponse, SongData, SongSearchData, SongSearchOption, Version } from "./types";
 
 class TaikowikiApi {
     baseUrl = new URL("https://taiko.wiki");
