@@ -1,6 +1,6 @@
 {
   "name": "@taiko-wiki/taikowiki-api",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "taiko.wiki api",
   "main": "./cjs/index.js",
   "module": "./esm/index.js",
@@ -19,11 +19,6 @@
   "keywords": [],
   "author": "hotsixman",
   "license": "MIT",
-  "dependencies": {
-    "axios": "^1.6.2",
-    "cheerio": "^1.0.0-rc.12",
-    "fs": "^0.0.1-security"
-  },
   "devDependencies": {
     "@taiko-wiki/taiko-rating": "^1.9.0",
     "hiroba-js": "^1.7.7",
